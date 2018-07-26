@@ -1,7 +1,6 @@
 ## -*- coding: utf-8 -*-
 <%namespace name="helper" file="index_helper.tmpl"/>
 <%namespace name="math" file="math_helper.tmpl"/>
-<%namespace name="comments" file="comments_helper.tmpl"/>
 <%namespace name="pagination" file="pagination_helper.tmpl"/>
 <%namespace name="feeds_translations" file="feeds_translations_helper.tmpl" import="*"/>
 <%inherit file="base.tmpl"/>
@@ -38,9 +37,6 @@
             % endif
             </span></p>
             <p class="dateline"><a href="${post.permalink()}" rel="bookmark"><time class="published dt-published" datetime="${post.formatted_date('webiso')}" title="${post.formatted_date(date_format)|h}">${post.formatted_date(date_format)|h}</time></a></p>
-            % if not post.meta('nocomments') and site_has_comments:
-                <p class="commentline">${comments.comment_link(post.permalink(), post._base_path)}
-            % endif
         </div>
     </header>
     %if index_teasers:
@@ -55,6 +51,5 @@
 % endfor
 </div>
 ${helper.html_pager()}
-${comments.comment_link_script()}
 ${math.math_scripts_ifposts(posts)}
 </%block>

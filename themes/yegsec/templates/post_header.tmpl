@@ -1,6 +1,5 @@
 ## -*- coding: utf-8 -*-
 <%namespace name="helper" file="post_helper.tmpl"/>
-<%namespace name="comments" file="comments_helper.tmpl"/>
 
 <%def name="html_title()">
 %if title and not post.meta('hidetitle'):
@@ -39,9 +38,6 @@
                 % endif
             </span></p>
             <p class="dateline"><a href="${post.permalink()}" rel="bookmark"><time class="published dt-published" datetime="${post.formatted_date('webiso')}" itemprop="datePublished" title="${post.formatted_date(date_format)|h}">${post.formatted_date(date_format)|h}</time></a></p>
-            % if not post.meta('nocomments') and site_has_comments:
-                <p class="commentline">${comments.comment_link(post.permalink(), post._base_path)}
-            % endif
             ${html_sourcelink()}
             % if post.meta('link'):
                     <p class="linkline"><a href="${post.meta('link')}">${messages("Original site")}</a></p>
