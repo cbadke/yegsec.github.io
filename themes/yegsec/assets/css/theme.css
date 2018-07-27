@@ -201,39 +201,37 @@ body {
 	font-size: 17px;
 	line-height: 1.4;
 	padding: 1em;
-  max-width: 60em;
+  max-width: 50em;
+}
+
+#header .top {
+  display:flex;
+  flex-direction: row;
+  justify-content:space-between;
+}
+#menu{
+  margin-top: 15px;
+	border-top: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+}
+#menu ul {
+  margin:0;
+  line-height: 2;
+  text-align: center;
+}
+#header h1 {
+  margin: 0;
+}
+#brand .name {
+  font-size: 1.5em;
+}
+#brand .description {
+  font-size: 1em;
 }
 
 #container {
   position:relative;
 	margin: 1em auto;
-	max-width: 100%;
-	padding-left:100px;
-}
-
-#contact-bar {
-  width: 100px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  font-size:3em;
-}
-
-#contact-bar a {
-  display:block;
-  padding-bottom: 20px;
-}
-#contact-bar a, #contact-bar a:visited {
-	color: #aaa;
-}
-
-#contact-bar a:hover, #header h1:hover {
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-  color: #ffffff;
-  text-decoration: none;
-  opacity: 0.9;
-  border:0;
 }
 
 #menu ul,
@@ -241,72 +239,37 @@ body {
 .postpromonav .tags,
 .postpromonav .tags li,
 .pager,
-.pager li,
-#toptranslations ul,
-#toptranslations ul li {
+.pager li {
 	list-style: none;
 	padding-left: 0;
 	padding-right: 0;
 }
 
-#toptranslations ul {
-	display: inline;
-}
-
-#menu ul li,
-#toptranslations ul li {
+#menu ul li {
 	display: inline-block;
 	margin-right: 1.5em;
 }
 
-#toptranslations h2 {
-	display: inline;
-	font-size: 1em;
-	margin-right: 1.5em;
-}
-
-#menu ul li:dir(rtl),
-#toptranslations ul li:dir(rtl),
-#toptranslations h2:dir(rtl) {
+#menu ul li:dir(rtl) {
 	margin-left: 1.5em;
 	margin-right: 0;
-}
-
-#toptranslations {
-	text-align: right;
-	float: right;
-}
-
-#toptranslations:dir(rtl) {
-	text-align: left;
-	float: left;
-}
-
-.posttranslations h3, .translationslist h3 {
-	display: inline;
-	font-size: 1em;
 }
 
 .entry-title {
 	font-size: 2em;
 }
 
-.posttranslations h3:last-child, .translationslist h3:last-child {
-	display: none;
-}
-
 .postindex article {
 	border-bottom: 1px solid #aaa;
 	padding-bottom: 1em;
 }
-#header {
-	border-bottom: 1px solid #aaa;
-}
-#header h1 {
-  margin-bottom:0;
-}
+
 #footer {
+	text-align: center;
+}
+#footer .social {
 	border-top: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
 }
 
 #s3cr3t {
@@ -403,16 +366,6 @@ body {
 .metadata p,
 .translationslist p {
 	display: inline;
-}
-
-#brand {
-	font-size: 3em;
-	line-height: 1;
-}
-
-#brand :link,
-#brand :visited {
-	color: inherit;
 }
 
 /* Images */

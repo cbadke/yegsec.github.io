@@ -1,10 +1,16 @@
 ## -*- coding: utf-8 -*-
 
 <%def name="html_footer()">
-    %if content_footer:
         <footer id="footer">
-            <p>${content_footer}</p>
-            ${template_hooks['page_footer']()}
+          <div class="social">
+          <a href="https://twitter.com/yegsec/" title="GitHub"><i class="fab fa-twitter"></i></a>
+          <a href="https://github.com/yegsec/" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://yegsec.slack.com/" title="Slack"><i class="fab fa-slack"></i></a>
+          </div>
+          <div class="copyright">
+            ${content_footer}
+          </div>
+          ${template_hooks['page_footer']()}
         </footer>
-    %endif
 </%def>
+

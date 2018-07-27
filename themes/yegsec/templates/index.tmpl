@@ -1,6 +1,5 @@
 ## -*- coding: utf-8 -*-
 <%namespace name="helper" file="index_helper.tmpl"/>
-<%namespace name="math" file="math_helper.tmpl"/>
 <%namespace name="pagination" file="pagination_helper.tmpl"/>
 <%namespace name="feeds_translations" file="feeds_translations_helper.tmpl" import="*"/>
 <%inherit file="base.tmpl"/>
@@ -10,7 +9,6 @@
     % if posts and (permalink == '/' or permalink == '/' + index_file):
         <link rel="prefetch" href="${posts[0].permalink()}" type="text/html">
     % endif
-    ${math.math_styles_ifposts(posts)}
 </%block>
 
 <%block name="content">
@@ -28,7 +26,6 @@
   ${recent_posts(posts, 5, 'Events')}
 </div>
 ${helper.html_pager()}
-${math.math_scripts_ifposts(posts)}
 </%block>
 
 <%def name="recent_posts(posts, count, category)">
