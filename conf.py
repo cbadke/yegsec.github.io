@@ -783,16 +783,16 @@ GITHUB_COMMIT_SOURCE = True
 # PRESERVE_EXIF_DATA is set to True
 # To preserve ALL EXIF data, set EXIF_WHITELIST to {"*": "*"}
 
-# EXIF_WHITELIST = {}
+EXIF_WHITELIST = {}
 
 # Some examples of EXIF_WHITELIST settings:
 
 # Basic image information:
-# EXIF_WHITELIST['0th'] = [
-#    "Orientation",
-#    "XResolution",
-#    "YResolution",
-# ]
+EXIF_WHITELIST['0th'] = [
+   "Orientation",
+   "XResolution",
+   "YResolution",
+]
 
 # If you want to keep GPS data in the images:
 # EXIF_WHITELIST['GPS'] = ["*"]
