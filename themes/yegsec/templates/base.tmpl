@@ -12,8 +12,8 @@ ${template_hooks['extra_head']()}
 </head>
 <body>
     <a href="#content" class="sr-only sr-only-focusable">${messages("Skip to main content")}</a>
-    ${header.html_contact_bar()}
     <div id="container">
+    ${header.html_contact_bar()}
          ${header.html_header()}
          <main id="content">
             <%block name="content"></%block>
