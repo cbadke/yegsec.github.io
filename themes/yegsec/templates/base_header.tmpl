@@ -25,6 +25,15 @@
         <span id="blog-title">${blog_title|h}</span>
     % endif
     </a></h1>
+    <span>${blog_description|h}</span>
+</%def>
+
+<%def name="html_contact_bar()">
+  <div id="contact-bar">
+    <a href="https://twitter.com/yegsec/" title="GitHub"><i class="fab fa-twitter"></i></a>
+    <a href="https://github.com/yegsec/" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://yegsec.slack.com/" title="Slack"><i class="fab fa-slack"></i></a>
+  </div>
 </%def>
 
 <%def name="html_navigation_links()">
