@@ -23,10 +23,6 @@
             %endfor
         </ul>
         %endif
-        <div class="metadata">
-            ${feeds_translations.feed_link(tag)}
-        </div>
-        ${feeds_translations.translation_link()}
     </header>
     %if posts:
         <ul class="postlist">
@@ -35,5 +31,9 @@
         % endfor
         </ul>
     %endif
+        <div class="metadata">
+            ${feeds_translations.feed_link(tag)}
+        </div>
+        ${feeds_translations.translation_link()}
 </article>
 </%block>

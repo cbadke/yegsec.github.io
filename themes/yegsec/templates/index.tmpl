@@ -24,7 +24,17 @@
     ${pagination.page_navigation(current_page, page_links, prevlink, nextlink, prev_next_links_reversed)}
 % endif
 <div class="postindex">
-% for post in posts:
+  ${recent_posts(posts, 5, 'Announcements')}
+  ${recent_posts(posts, 5, 'Events')}
+</div>
+${helper.html_pager()}
+${math.math_scripts_ifposts(posts)}
+</%block>
+
+<%def name="recent_posts(posts, count, category)">
+<span>${category}</span>
+% for post in posts[:count]:
+  % if post.meta('category') == category:
     <article class="h-entry post-${post.meta('type')}">
     <header>
         <h1 class="p-name entry-title"><a href="${post.permalink()}" class="u-url">${post.title()|h}</a></h1>
@@ -48,8 +58,6 @@
     %endif
     </div>
     </article>
+  %endif
 % endfor
-</div>
-${helper.html_pager()}
-${math.math_scripts_ifposts(posts)}
-</%block>
+</%def>

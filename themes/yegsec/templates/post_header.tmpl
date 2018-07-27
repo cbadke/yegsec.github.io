@@ -3,7 +3,7 @@
 
 <%def name="html_title()">
 %if title and not post.meta('hidetitle'):
-    <h1 class="p-name entry-title" itemprop="headline name"><a href="${post.permalink()}" class="u-url">${post.title()|h}</a></h1>
+    <h1 class="p-name entry-title" itemprop="headline name">${post.title()|h}</h1>
 %endif
 </%def>
 
@@ -20,12 +20,6 @@
     % endif
 </%def>
 
-<%def name="html_sourcelink()">
-    % if show_sourcelink:
-        <p class="sourceline"><a href="${post.source_link()}" class="sourcelink">${messages("Source")}</a></p>
-    % endif
-</%def>
-
 <%def name="html_post_header()">
     <header>
         ${html_title()}
@@ -38,7 +32,6 @@
                 % endif
             </span></p>
             <p class="dateline"><a href="${post.permalink()}" rel="bookmark"><time class="published dt-published" datetime="${post.formatted_date('webiso')}" itemprop="datePublished" title="${post.formatted_date(date_format)|h}">${post.formatted_date(date_format)|h}</time></a></p>
-            ${html_sourcelink()}
             % if post.meta('link'):
                     <p class="linkline"><a href="${post.meta('link')}">${messages("Original site")}</a></p>
             % endif
