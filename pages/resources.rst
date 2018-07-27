@@ -1,4 +1,4 @@
-.. title: YEGSEC - Cyber Library of Cyber Resources. Cyber.
+.. title: Cyber Library of Cyber Resources. Cyber.
 .. slug: resources
 .. date: 2018-07-26 09:16:42 UTC-06:00
 .. tags:
