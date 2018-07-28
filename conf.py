@@ -135,9 +135,8 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/categories/cat_announcements", "Announcements"),
-        ("/categories/cat_events", "Events"),
-        ("/resources", "Resources"),
+        ("/events/", "Events"),
+        ("/resources/", "Resources"),
     ),
 }
 
@@ -320,11 +319,11 @@ NEW_POST_DATE_PATH = True
 
 # Writes tag cloud data in form of tag_cloud_data.json.
 # Warning: this option will change its default value to False in v8!
-WRITE_TAG_CLOUD = True
+WRITE_TAG_CLOUD = False
 
 # Generate pages for each section. The site must have at least two sections
 # for this option to take effect. It wouldn't build for just one section.
-POSTS_SECTIONS = True
+POSTS_SECTIONS = False
 
 # Setting this to False generates a list page instead of an index. Indexes
 # are the default and will apply GENERATE_ATOM if set.
@@ -518,7 +517,7 @@ HIDDEN_CATEGORIES = []
 
 # If ENABLE_AUTHOR_PAGES is set to True and there is more than one
 # author, author pages are generated.
-# ENABLE_AUTHOR_PAGES = True
+ENABLE_AUTHOR_PAGES = False
 
 # Path to author pages. Final locations are:
 # output / TRANSLATION[lang] / AUTHOR_PATH / index.html (list of authors)
@@ -732,7 +731,7 @@ GITHUB_COMMIT_SOURCE = True
 # use this feature if you do not understand what this means.
 
 # Compiler to process LESS files.
-# LESS_COMPILER = 'lessc'
+LESS_COMPILER = 'lessc'
 
 # A list of options to pass to the LESS compiler.
 # Final command is: LESS_COMPILER LESS_OPTIONS file.less
@@ -744,25 +743,6 @@ GITHUB_COMMIT_SOURCE = True
 # A list of options to pass to the Sass compiler.
 # Final command is: SASS_COMPILER SASS_OPTIONS file.s(a|c)ss
 # SASS_OPTIONS = []
-
-# #############################################################################
-# Image Gallery Options
-# #############################################################################
-
-# One or more folders containing galleries. The format is a dictionary of
-# {"source": "relative_destination"}, where galleries are looked for in
-# "source/" and the results will be located in
-# "OUTPUT_PATH/relative_destination/gallery_name"
-# Default is:
-# GALLERY_FOLDERS = {"galleries": "galleries"}
-# More gallery options:
-# THUMBNAIL_SIZE = 180
-# MAX_IMAGE_SIZE = 1280
-# USE_FILENAME_AS_TITLE = True
-# EXTRA_IMAGE_EXTENSIONS = []
-#
-# If set to False, it will sort by filename instead. Defaults to True
-# GALLERY_SORT_BY_DATE = True
 
 # If set to True, EXIF data will be copied when an image is thumbnailed or
 # resized. (See also EXIF_WHITELIST)
@@ -942,7 +922,7 @@ LICENSE = ""
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
-CONTENT_FOOTER = 'Contents &copy; {date}         <a href="mailto:{email}">{author}</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         {license}'
+CONTENT_FOOTER = '&copy; {date}'
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will
@@ -1186,7 +1166,7 @@ SEARCH_FORM = """
 <input type="hidden" name="kt" value="h">
 <input type="text" name="q" maxlength="255"
  placeholder="Search&hellip;" class="span2" style="margin-top: 4px;">
-<input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+<input type="submit" value="DuckDuckGo Search" style="display:none">
 </form>
 <!-- End of custom search -->
 """ % SITE_URL
@@ -1212,7 +1192,7 @@ SEARCH_FORM = """
 # Bootstrap is served from BootstrapCDN (provided by MaxCDN)
 # Set this to False if you want to host your site without requiring access to
 # external resources.
-USE_CDN = True
+USE_CDN = False
 
 # Check for USE_CDN compatibility.
 # If you are using custom themes, have configured the CSS properly and are

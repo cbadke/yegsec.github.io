@@ -219,6 +219,15 @@ body {
   line-height: 2;
   text-align: center;
 }
+#menu a.active {
+  font-weight: bold;
+  color:#ca0000
+}
+#menu a.active:hover {
+  font-weight: bold;
+  color:#aa0000;
+  border-bottom: 2px solid #aa0000; }
+}
 #header h1 {
   margin: 0;
 }
