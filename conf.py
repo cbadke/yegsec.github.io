@@ -1325,3 +1325,5 @@ GLOBAL_CONTEXT = {}
 # GLOBAL_CONTEXT as parameter when the template is about to be
 # rendered
 GLOBAL_CONTEXT_FILLER = []
+
+CREATE_HTTP_ERROR_PAGES = [404]
