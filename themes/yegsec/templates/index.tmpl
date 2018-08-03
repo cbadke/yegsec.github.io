@@ -4,6 +4,37 @@
 <%namespace name="feeds_translations" file="feeds_translations_helper.tmpl" import="*"/>
 <%inherit file="base.tmpl"/>
 
+<%def name="post_list(posts)">
+<div id="post-list">
+% for post in posts:
+    <article class="h-entry post-${post.meta('type')}">
+      <a href="${post.permalink()}" rel="bookmark">
+        <time class="published dt-published" datetime="${post.formatted_date('webiso')}" title="${post.formatted_date(date_format)|h}">${post.formatted_date(date_format)|h}</time>
+
+        <span> - ${post.title()|h}</span>
+      </a>
+    </article>
+% endfor
+</div>
+</%def>
+
+<%def name="about_section()">
+<div id="about">
+  <div class="calendar">
+    <p>
+    <iframe src="https://calendar.google.com/calendar/embed?title=Upcoming%20Meetups&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=246&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=liso.ca_o5e0rak979182i1is6ue9t3f28%40group.calendar.google.com&amp;color=%23B1365F&amp;ctz=America%2FEdmonton"
+                    style="border-width:0" width="400" height="246" frameborder="0" scrolling="no"></iframe>
+    </p>
+  </div>
+  <div class="blah-blah">
+    <p>Hello! Welcome to YEGSEC, the best Edmonton-based security meetup east of the Rockies.</p>
+    <p>We meet at Startup Edmonton every 3rd Tuesday of each month to present on hot topics, orchestrate workshops and host Capture the Flag events.</p>
+    <p>Whether you're new to the Info Sec world and are looking to expand your knowledge or you're a security professional who wants to socialize with your peers, this is the security meetup for you!</p>
+    <p>We strive to provide a safe learning environment for everyone, so come on out and join the fun!</p>
+  </div>
+</div>
+</%def>
+
 <%block name="extra_head">
     ${parent.extra_head()}
     % if posts and (permalink == '/' or permalink == '/' + index_file):
@@ -18,43 +49,7 @@
 % if 'main_index' in pagekind:
     ${front_index_header}
 % endif
-% if page_links:
-    ${pagination.page_navigation(current_page, page_links, prevlink, nextlink, prev_next_links_reversed)}
-% endif
-<div class="postindex">
-  ${recent_posts(posts, 5, 'Announcements')}
-  ${recent_posts(posts, 5, 'Events')}
-</div>
-${helper.html_pager()}
-</%block>
 
-<%def name="recent_posts(posts, count, category)">
-<span>${category}</span>
-% for post in posts[:count]:
-  % if post.meta('category') == category:
-    <article class="h-entry post-${post.meta('type')}">
-    <header>
-        <h1 class="p-name entry-title"><a href="${post.permalink()}" class="u-url">${post.title()|h}</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-            % if author_pages_generated:
-                <a href="${_link('author', post.author())}">${post.author()|h}</a>
-            % else:
-                ${post.author()|h}
-            % endif
-            </span></p>
-            <p class="dateline"><a href="${post.permalink()}" rel="bookmark"><time class="published dt-published" datetime="${post.formatted_date('webiso')}" title="${post.formatted_date(date_format)|h}">${post.formatted_date(date_format)|h}</time></a></p>
-        </div>
-    </header>
-    %if index_teasers:
-    <div class="p-summary entry-summary">
-    ${post.text(teaser_only=True)}
-    %else:
-    <div class="e-content entry-content">
-    ${post.text(teaser_only=False)}
-    %endif
-    </div>
-    </article>
-  %endif
-% endfor
-</%def>
+${about_section()}
+${post_list(posts)}
+</%block>

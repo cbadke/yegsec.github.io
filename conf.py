@@ -26,7 +26,7 @@ SITE_URL = "https://yegsec.ca/"
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://yegsec.ca/"
 BLOG_EMAIL = ""
-BLOG_DESCRIPTION = "The best Edmonton-based security meetup east of the Rockies"  # (translatable)
+BLOG_DESCRIPTION = ""  # (translatable)
 
 # Nikola is multilingual!
 #
@@ -135,7 +135,6 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/events/", "Events"),
         ("/resources/", "Resources"),
     ),
 }
@@ -1060,7 +1059,8 @@ PRETTY_URLS = True
 # Note: most Nikola-specific extensions are done via the Nikola plugin system,
 #       with the MarkdownExtension class and should not be added here.
 # The default is ['fenced_code', 'codehilite']
-MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.codehilite', 'markdown.extensions.extra']
+#MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.codehilite', 'markdown.extensions.extra', 'markdown.extensions.meta']
+MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite', 'extra', 'meta']
 
 # Extra options to pass to the pandoc command.
 # by default, it's empty, is a list of strings, for example

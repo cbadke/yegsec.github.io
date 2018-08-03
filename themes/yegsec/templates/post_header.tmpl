@@ -24,6 +24,7 @@
     <header>
         ${html_title()}
         <div class="metadata">
+          % if post.author:
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 % if author_pages_generated:
                     <a href="${_link('author', post.author())}">${post.author()|h}</a>
@@ -31,10 +32,8 @@
                     ${post.author()|h}
                 % endif
             </span></p>
-            <p class="dateline"><a href="${post.permalink()}" rel="bookmark"><time class="published dt-published" datetime="${post.formatted_date('webiso')}" itemprop="datePublished" title="${post.formatted_date(date_format)|h}">${post.formatted_date(date_format)|h}</time></a></p>
-            % if post.meta('link'):
-                    <p class="linkline"><a href="${post.meta('link')}">${messages("Original site")}</a></p>
-            % endif
+          % endif
+            <p class="dateline"><time class="published dt-published" datetime="${post.formatted_date('webiso')}" itemprop="datePublished" title="${post.formatted_date(date_format)|h}">${post.formatted_date(date_format)|h}</time></p>
         </div>
         ${html_translations(post)}
     </header>
