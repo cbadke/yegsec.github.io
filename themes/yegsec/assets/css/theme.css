@@ -136,6 +136,18 @@ body {
   display:flex;
   flex-direction: row-reverse;
   justify-content:space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#about div, #content {
+  margin: 0 5px 0 5px;
+  padding: 10px;
+}
+#about div{
+  background: white;
+  color: black;
+  border-radius: 10px;
 }
 @media (max-width: 850px) {
   #about{
