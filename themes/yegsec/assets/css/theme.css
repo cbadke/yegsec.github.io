@@ -57,7 +57,7 @@ h6 {
 
 body {
 	color: #aaa;
-	background: #191414;
+	background: #002742;
 	font-family: 'Lora', Helvetica, Arial, sans-serif;
 	font-size: 17px;
 	line-height: 1.4;
@@ -65,54 +65,59 @@ body {
   max-width: 50em;
 }
 
-#header .top {
+#header {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display:flex;
   flex-direction: row;
   justify-content:space-between;
+  padding-left:20px;
+  padding-right:20px;
+  padding-bottom: 1em;
+	border-bottom: 1px solid #aaa;
+}
+#header .logo a:hover {
+  text-decoration: none;
+  border-bottom: none;
 }
 #content {
   margin-bottom: 15px;
 }
-#menu{
-  margin-top: 15px;
-	border-top: 1px solid #aaa;
-	border-bottom: 1px solid #aaa;
+.searchform{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display:flex;
+  align-items:center;
+  width: 147px;
 }
-#menu ul {
+nav {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items:center;
+  border-left: 1px;
+  width: 147px;
+}
+nav ul {
   margin:0;
-  line-height: 2;
-  text-align: center;
 }
-#menu a.active {
+nav a.active {
   font-weight: bold;
-  color:#ca0000
+  color:#e9a725
 }
-#menu a.active:hover {
+nav a.active:hover {
   font-weight: bold;
-  color:#aa0000;
-  border-bottom: 2px solid #aa0000; }
-
-#brand .name {
-  font-size: 1.5em;
-  margin-top: 0;
-  padding-top: 0;
+  color:#e9a725;
+  border-bottom: 2px solid #e9a725;
 }
-@media (max-width: 684px) {
-#brand .description {
-  display:none;
-}
-}
-#brand .description {
-  font-size: 1em;
-}
-
-#container {
-  position:relative;
-	margin: 1em auto;
-}
-
-#menu ul,
-#menu ul li,
+nav ul,
+nav ul li,
 .postpromonav .tags,
 .postpromonav .tags li,
 .pager,
@@ -120,19 +125,31 @@ body {
 	list-style: none;
 	padding-left: 0;
 	padding-right: 0;
+	margin-bottom:0;
 }
 
-#menu ul li {
-	display: inline-block;
-	margin-right: 1.5em;
+nav ul li {
 }
 
-#menu ul li:dir(rtl) {
-	margin-left: 1.5em;
+nav ul li:dir(rtl) {
 	margin-right: 0;
 }
 
+
+@media (max-width: 684px) {
+}
+
+#container {
+  position:relative;
+	margin: 1em auto;
+
+}
+
 #about {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display:flex;
   flex-direction: row-reverse;
   justify-content:space-between;
@@ -157,6 +174,10 @@ body {
 
 
 #post-list {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display:flex;
   justify-content: center;
 }
