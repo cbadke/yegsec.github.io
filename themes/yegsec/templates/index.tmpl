@@ -6,6 +6,7 @@
 
 <%def name="post_list(posts)">
 <div id="post-list">
+  <div>
 % for post in posts:
     <article class="h-entry post-${post.meta('type')}">
       <a href="${post.permalink()}" rel="bookmark">
@@ -15,6 +16,7 @@
       </a>
     </article>
 % endfor
+  </div>
 </div>
 </%def>
 
