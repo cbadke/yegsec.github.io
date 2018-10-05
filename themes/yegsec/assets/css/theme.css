@@ -37,32 +37,52 @@ h1, h2, h3, h4, h5, h6 {
   hyphens: auto; }
 
 h1 {
-  font-size: 2.00em; }
+  font-size: 50px;
+}
 
 h2 {
-  font-size: 1.75em; }
+  font-size: 35px;
+}
 
 h3 {
-  font-size: 1.5em; }
+  font-size: 30px;
+}
 
 h4 {
-  font-size: 1.25em; }
+  font-size: 21px;
+}
 
 h5 {
-  font-size: 1.em; }
+  font-size: 16px;
+}
 
 h6 {
-  font-size: 1em; }
+  font-size: 16px;
+}
 
 
 body {
-	color: #aaa;
+	color: white;
 	background: #002742;
 	font-family: 'Lora', Helvetica, Arial, sans-serif;
-	font-size: 17px;
+	font-size: 16px;
 	line-height: 1.4;
 	padding: 1em;
   max-width: 50em;
+}
+
+a:hover {
+  color:#e9a725;
+  border-bottom: 1px solid #e9a725;
+}
+
+#content {
+  margin-bottom: 15px;
+}
+
+#container {
+  position:relative;
+	margin: 1em auto;
 }
 
 #header {
@@ -81,9 +101,6 @@ body {
 #header .logo a:hover {
   text-decoration: none;
   border-bottom: none;
-}
-#content {
-  margin-bottom: 15px;
 }
 .searchform{
   display: -webkit-box;
@@ -136,42 +153,23 @@ nav ul li:dir(rtl) {
 }
 
 
-@media (max-width: 684px) {
-}
-
-#container {
-  position:relative;
-	margin: 1em auto;
-
-}
-
 #about {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display:flex;
-  flex-direction: row-reverse;
-  justify-content:space-between;
-  margin-top: 10px;
   margin-bottom: 10px;
 }
 
-#about div, #content {
+#about div {
+  margin: 0 5px 0 5px;
+  padding: 10px 25px;
+}
+#content {
   margin: 0 5px 0 5px;
   padding: 10px;
 }
 #about div{
   background: white;
-  color: black;
+	color: #002742;
   border-radius: 10px;
 }
-@media (max-width: 850px) {
-  #about{
-    display:block;
-  }
-}
-
 
 #post-list {
   display: -webkit-box;
@@ -180,10 +178,8 @@ nav ul li:dir(rtl) {
   display: -webkit-flex;
   display:flex;
   justify-content: center;
-}
-
-.entry-title {
-	font-size: 1.75em;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .postindex article {
@@ -216,6 +212,9 @@ nav ul li:dir(rtl) {
   display:none;
 }
 
+/**********************************/
+/* the real nitty gritty is below */
+/**********************************/
 /* Tags */
 .postpromonav {
 	border-bottom: 1px solid #aaa;
@@ -394,105 +393,3 @@ pre.code, code {
 	overflow: auto;
 }
 
-/* SOURCE: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
-@media print {
-	*,
-	*:before,
-	*:after {
-		background: transparent !important;
-		color: #000 !important; /* Black prints faster: http://www.sanbeiji.com/archives/953 */
-		box-shadow: none !important;
-		text-shadow: none !important;
-		font-family: Garamond, Junicode, serif;
-	}
-
-	body {
-		font-size: 12pt;
-	}
-
-	a,
-	a:visited {
-		text-decoration: underline;
-	}
-
-	a[href]:after {
-		content: " (" attr(href) ")";
-	}
-
-	abbr[title]:after {
-		content: " (" attr(title) ")";
-	}
-
-	/*
-	 * Don't show links that are fragment identifiers,
-	 * or use the `javascript:` pseudo protocol
-	 */
-
-	a[href^="#"]:after,
-	a[href^="data:"]:after,
-	a[href^="javascript:"]:after {
-		content: "";
-	}
-
-	pre,
-	blockquote {
-		border: 1px solid #999;
-		page-break-inside: avoid;
-	}
-
-	/*
-	 * Printing Tables:
-	 * http://css-discuss.incutio.com/wiki/Printing_Tables
-	 */
-
-	thead {
-		display: table-header-group;
-	}
-
-	tr,
-	img {
-		page-break-inside: avoid;
-	}
-
-	img {
-		max-width: 100% !important;
-	}
-
-	p,
-	h2,
-	h3 {
-		orphans: 3;
-		widows: 3;
-	}
-
-	h2,
-	h3 {
-		page-break-after: avoid;
-	}
-
-	.hidden-print {
-		display: none !important;
-	}
-
-	article .entry-title a[href]:after,
-	article .metadata a[href]:after,
-	article .tags a[href]:after {
-		content: "";
-	}
-
-	article .metadata .sourceline {
-		display: none;
-	}
-
-	article .metadata .linkline a[href]:after {
-		content: " (" attr(href) ")";
-	}
-
-	#header {
-		display: none;
-	}
-
-	.postpromonav {
-		padding: 0;
-	}
-}
