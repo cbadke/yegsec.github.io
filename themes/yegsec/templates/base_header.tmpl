@@ -3,40 +3,27 @@
 
 <%def name="html_header()">
     <header id="header">
+      <div class="logo">
+        <a href="/"><img src="/img/logo.png" style="width:150px"/></a>
+      </div>
+      <div>
         <nav>
-          <ul>
-            %for url, text in navigation_links[lang]:
-            % if isinstance(url, tuple):
-            <li> ${text}
-              <ul>
-                %for suburl, text in url:
-                % if rel_link(permalink, suburl) == "#":
-                <li><a href="${permalink}" class="active">${text}<span class="sr-only"> ${messages("(active)", lang)}</span></a></li>
-                %else:
-                <li><a href="${suburl}">${text}</a></li>
-                %endif
-                %endfor
-              </ul>
-              % else:
-              % if rel_link(permalink, url) == "#":
-              <li><a href="${permalink}" class="active">${text}<span class="sr-only"> ${messages("(active)", lang)}</span></a></li>
-              %else:
-              <li><a href="${url}">${text}</a></li>
-              %endif
-              % endif
-              %endfor
-              ${template_hooks['menu']()}
-              ${template_hooks['menu_alt']()}
-          </ul>
+          <div>
+          %for url, text in navigation_links[lang]:
+            % if rel_link(permalink, url) == "#":
+            <span><a href="${permalink}" class="active">${text}<span class="sr-only"> ${messages("(active)", lang)}</span></a></span>
+            %else:
+            <span><a href="${url}">${text}</a></span>
+            %endif
+            <span>|</span>
+          %endfor
+          %if search_form:
+          <span class="searchform" role="search">
+            ${search_form}
+          </span>
+          %endif
+          </div>
         </nav>
-        <div class="logo">
-          <a href="/"><img src="/img/logo.png" style="width:150px"/></a>
-        </div>
-        %if search_form:
-        <div class="searchform" role="search">
-          ${search_form}
-        </div>
-        %endif
       </div>
     </header>
     ${template_hooks['page_header']()}

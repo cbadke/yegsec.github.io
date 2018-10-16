@@ -85,18 +85,23 @@ a:hover {
 	margin: 1em auto;
 }
 
+#header, #footer {
+  font-family: Roboto, Geneva, sans-serif;
+}
 #header {
+  padding-left:20px;
+  padding-right:20px;
+  padding-bottom: 1em;
+}
+#header .logo {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display:flex;
   flex-direction: row;
-  justify-content:space-between;
-  padding-left:20px;
-  padding-right:20px;
-  padding-bottom: 1em;
-	border-bottom: 1px solid #aaa;
+  align-items: center;
+  justify-content:center;
 }
 #header .logo a:hover {
   text-decoration: none;
@@ -110,16 +115,28 @@ a:hover {
   display:flex;
   align-items:center;
   width: 147px;
+  display:inline-block;
 }
-nav {
+input[type]{
+  color: rgb(74,74,74);
+  background-color: white;
+  border-bottom-color: white;
+  border-left-color: white;
+  border-right-color: white;
+  border-top-color: white;
+}
+input[type]:focus{
+  border: 1px solid rgb(74, 74, 74);
+}
+nav{
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  flex-direction: row;
   align-items:center;
-  border-left: 1px;
-  width: 147px;
+  justify-content:center;
 }
 nav ul {
   margin:0;
@@ -191,8 +208,6 @@ nav ul li:dir(rtl) {
 	text-align: center;
 }
 #footer .social {
-	border-top: 1px solid #aaa;
-	border-bottom: 1px solid #aaa;
 	font-size:1.5em;
 }
 .social a {
